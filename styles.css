@@ -1,0 +1,94 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9; /* 明るい背景色 */
+  color: #333; /* ダークなテキスト色 */
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header {
+  background-color: #0066cc; /* タイトルバーの背景色 */
+  color: white; /* タイトルのテキスト色 */
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff; /* 白い背景色 */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  flex: 2;
+  padding-left: 20px;
+}
+
+h2 {
+  color: #0066cc; /* 明るいテーマカラー */
+}
+
+p, li {
+  color: #333;
+}
+
+section, div {
+  background-color: #fff; /* 白い背景色 */
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  color: #0066cc; /* 明るいテーマカラー */
+  text-decoration: none;
+}
+
+footer {
+  background-color: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd; /* 明るいボーダー色 */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2; /* 明るい背景色 */
+}
+
+.profile-table-photo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-table-photo img {
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
