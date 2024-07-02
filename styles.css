@@ -1,7 +1,10 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9; /* 明るい背景色 */
-  color: #333; /* ダークなテキスト色 */
+  font-family: 'Roboto', sans-serif;
+  background-image: url('img/gameneon03-1536x864.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -13,18 +16,83 @@ body {
 }
 
 .header {
-  background-color: #0066cc; /* タイトルバーの背景色 */
-  color: white; /* タイトルのテキスト色 */
+  background-color: #0066cc;
+  color: white;
   padding: 20px;
   text-align: center;
 }
 
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px; /* リンクのパディングを追加 */
+}
+
+.nav-links a:hover {
+  border-radius: 5px; /* 角丸を追加 */
+}
+
+#nav-profile {
+  background-color: #003d80;
+}
+
+#nav-charm {
+  background-color:  #003d80;
+}
+
+#nav-activities {
+  background-color:  #003d80;
+}
+
+#nav-video-playlists {
+  background-color:  #003d80;
+}
+
+#nav-popular-videos {
+  background-color: #003d80;
+}
+
+#nav-profile a:hover {
+  background-color:  #75a6db;
+}
+
+#nav-charm a:hover {
+  background-color: #75a6db;
+}
+
+#nav-activities a:hover {
+  background-color: #75a6db;
+}
+
+#nav-video-playlists a:hover {
+  background-color: #75a6db;
+}
+
+#nav-popular-videos a:hover {
+  background-color: #75a6db;
+}
 .profile-container {
   display: flex;
   align-items: center;
   margin: 20px;
   padding: 20px;
-  background-color: #fff; /* 白い背景色 */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -35,7 +103,7 @@ body {
 }
 
 h2 {
-  color: #0066cc; /* 明るいテーマカラー */
+  color: #0066cc;
 }
 
 p, li {
@@ -43,11 +111,10 @@ p, li {
 }
 
 section, div {
-  background-color: #fff; /* 白い背景色 */
+  background-color: rgba(255, 255, 255, 0.9);
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -56,8 +123,12 @@ ul {
 }
 
 li a {
-  color: #0066cc; /* 明るいテーマカラー */
+  color: #0066cc;
   text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
 }
 
 footer {
@@ -68,18 +139,18 @@ footer {
 }
 
 table {
-  width: 50%;
+  width: 100%;
   border-collapse: collapse;
 }
 
 th, td {
-  border: 1px solid #ddd; /* 明るいボーダー色 */
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: #f2f2f2; /* 明るい背景色 */
+  background-color: #f2f2f2;
 }
 
 .profile-table-photo {
@@ -91,4 +162,157 @@ th {
   margin-left: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-category {
+  margin: 20px 0;
+}
+
+.video-category h2 {
+  margin-bottom: 20px;
+}
+
+.video {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.social-media ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.social-media li {
+  list-style: none;
+}
+
+.social-media a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .video-container iframe {
+    height: 180px;
+  }
+
+  .profile-table-photo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-table-photo img {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container iframe {
+    height: 160px;
+  }
+
+  .profile-table-photo table {
+    width: 100%;
+  }
+}
+
+.youtube-embed iframe {
+  width: 80%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.youtube-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.youtube-button button {
+  background-color: #f60d3c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.youtube-button button:hover {
+  background-color: #e51286;
+}
+
+button {
+  background-color: #f60d3c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.charm {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.charm h2 {
+  color: #0066cc;
+  text-align: center;
+}
+
+.charm-point {
+  margin-bottom: 20px;
+}
+
+.charm-point h3 {
+  color: #f60d3c;
+  margin-bottom: 10px;
+}
+
+.charm-point p {
+  color: #333;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+button:hover {
+  background-color: #e51286;
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }

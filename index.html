@@ -4,15 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <title>よしなまの紹介</title>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    function calculateAge(birthday) {
+      const birthDate = new Date(birthday);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+  
+      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+  
+    function updateAge() {
+      const ageElement = document.getElementById('age');
+      const birthday = '1996-01-30';  // よしなまさんの誕生日
+      ageElement.textContent = calculateAge(birthday) + '歳';
+    }
+  
+    document.addEventListener('DOMContentLoaded', updateAge);
+  </script>
 </head>
-<body>
+
+<body class="background-image">
     <div class="header">
         <h1>よしなまの紹介</h1>
-    </div>
+        <nav>
+          <ul class="nav-links">
+            <li id="nav-profile"><a href="#profile">プロフィール</a></li>
+            <li id="nav-charm"><a href="#charm">魅力</a></li>
+            <li id="nav-activities"><a href="#activities">活動内容</a></li>
+            <li id="nav-video-playlists"><a href="#video-playlists">再生リスト</a></li>
+            <li id="nav-popular-videos"><a href="#popular-videos">人気動画</a></li>
+          </ul>
+        </nav>
+      </div>
 
   <div class="profile-info clearfix">
-    <h2>プロフィール</h2>
+    <h2 id="profile">プロフィール</h2>
     <p>よしなまさんは、日本を拠点に活動する人気のゲーム実況者です。彼のユニークなコメントと楽しいプレイスタイルで、多くのファンを魅了しています。</p>
 
     <div class="profile-table-photo">
@@ -35,8 +70,8 @@
             </tr>
             <tr>
                 <td>年齢</td>
-                <td>27歳</td>
-            </tr>
+                <td id="age">28歳</td>
+              </tr>
             <tr>
                 <td>出身地</td>
                 <td>栃木県</td>
@@ -50,21 +85,80 @@
     </div>
 </div>
 
-<section class="activities">
-    <h2>活動</h2>
-    <p>よしなまさんは、YouTubeでのゲーム実況を中心に活動しています。彼のチャンネルでは、最新のゲームから懐かしの名作まで、多彩なジャンルのゲームをプレイしています。また、Twitchではライブストリームを行い、ファンとのリアルタイムでの交流も大切にしています。</p>
-    <p>さらに、彼は各種ゲームイベントやコンベンションにも積極的に参加しており、ファンとの直接の交流を楽しんでいます。よしなまさんの情熱とエネルギーは、多くの人々に影響を与え続けています。</p>
-    <p>以下は、彼の活動のハイライトです：</p>
-    <ul>
-        <li>YouTubeチャンネル登録者数:90万人以上</li>
-        <li>Twitchフォロワー数:50万人以上</li>
-        <li>参加イベント:東京ゲームショウ、E3、PAXなど</li>
-        <li>コラボレーション：他の人気実況者やゲーム開発者とのコラボ</li>
-        <li>その他の活動：ポッドキャスト出演、雑誌インタビュー、テレビ出演など</li>
-    </ul>
-    <p>よしなまさんのYouTubeチャンネルはこちら:<a href="https://www.youtube.com/channel/UCxxxxxx" target="_blank">よしなまのYouTubeチャンネル</a></p>
+<section class="charm">
+    <h2 id="charm">よしなまの魅力</h2>
+    <div class="charm-point">
+        <h3>ユニークな実況スタイル</h3>
+        <p>よしなまさんの実況は、そのユーモアと親しみやすさが特徴です。視聴者はまるで友達と一緒にゲームをプレイしているかのような感覚を楽しむことができます。</p>
+    </div>
+    <div class="charm-point">
+        <h3>多彩なゲームプレイ</h3>
+        <p>モンスターハンターやダークソウルなどの人気タイトルから、インディーゲームまで幅広いジャンルのゲームを実況。常に新しい挑戦を続ける姿勢が視聴者を惹きつけます。</p>
+    </div>
+    <div class="charm-point">
+        <h3>ファンとのコミュニケーション</h3>
+        <p>ライブ配信やコメント返信を通じて、視聴者と積極的にコミュニケーションを取ることを大切にしています。ファンとの距離感が近いことも大きな魅力です。</p>
+    </div>
+    <div class="charm-point">
+        <h3>初見プレイのスリル</h3>
+        <p>初めてプレイするゲームを実況するスタイルが多く、そのリアルな反応や試行錯誤を楽しむことができます。未知の世界を一緒に冒険するワクワク感がたまりません。</p>
+    </div>
 </section>
+<section class="activities">
+    <h2 id="activities">主な活動内容</h2>
+        <ul>
+            <li><strong>ゲーム実況:</strong> よしなまは主に「モンスターハンター」シリーズ、「ダークソウル」シリーズ、「エルデンリング」などのアクションRPGを中心に実況しています。また、「Minecraft」や「フォートナイト」など、さまざまなジャンルのゲームもプレイしています。</li>
+            <li><strong>初見プレイ:</strong> よしなまの動画の特徴として、初めてプレイするゲームの実況が多く、視聴者と一緒にゲームを楽しむスタイルが人気です。</li>
+            <li><strong>ライブ配信:</strong> 彼は定期的にライブ配信も行い、リアルタイムで視聴者とコミュニケーションをとりながらゲームをプレイします。</li>
+        </ul>
+    <p>よしなまさんのYouTubeチャンネルはこちら:<a href="https://www.youtube.com/@yoshinama0130" target="_blank">よしなまのYouTubeチャンネル</a></p>
 
+    <div class="youtube-button">
+        <h2>最新の動画をチェック</h2>
+        <a href="https://www.youtube.com/@yoshinama0130/videos" target="_blank">
+            <button type="button">YouTube最新動画を見る</button>
+        </a>
+    </div>
+
+    <section id="video-playlists" class="video-category section">
+        <h2>作成した再生リスト</h2>
+        <div class="video-container">
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=bf4SUyHboQOFEVHn&amp;list=PLA1YIUpRAYvUSB1xp9aIK3A1tV5gYMFWN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/ZCxHotjxvaA?si=hCqooHRHdMIGopY6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=ozaKorfGVfXI5hJj&amp;list=PLA1YIUpRAYvUVdZZdbV567ju5Mr0Igxh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="https://www.youtube.com/@yoshinama0130/playlists" target="_blank">
+                <button type="button">再生リストを見る</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="popular-videos" class="video-category section">
+        <h2>人気動画</h2>
+        <div class="video-container">
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uZSlJyn9Yxo?si=zTgRMafIJaA8BzfZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/h16S_2gGoU4?si=W-Dn0avrehRlHeTb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EdS4S279gEs?si=L1xJY41Zm_8XlYSX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="https://www.youtube.com/@yoshinama0130/videos" target="_blank">
+                <button type="button">人気動画を見る</button>
+            </a>
+        </div>
+    </section>
 
 <aside class="social-media">
     <h2>ソーシャルメディア</h2>
@@ -74,10 +168,9 @@
         <li><a href="https://www.instagram.com/yoshinama980/">Instagram</a></li>
     </ul>
 </aside>
-
+</body>
 <footer>
     <p>© 2024 よしなま. All rights reserved.</p>
 </footer>
 
-</body>
 </html>
